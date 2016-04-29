@@ -1,0 +1,57 @@
+=== WPCasa All Import ===
+Contributors: wpsight, simonrimkus
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZRR56U2VTPZAQ
+Tags: real estate, realestate, import, wp all import, wpallimport, xml, csv, listing, property, wpcasa
+Requires at least: 4.0
+Tested up to: 4.5
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Add-on for the WP All Import plugin to import any XML or CSV File to WPCasa
+
+== Description ==
+
+Use the WPCasa All Import add-on in combination with WPCasa and WP All Import to bulk import property information from anx XML or CSV file. The WPCasa All Import makes sure that the WP All Import plugin displays all the WPCasa custom fields in plain English and imports image galleries in the correct format.
+
+> Please notice that this plugin is an add-on for [WPCasa](https://wordpress.org/plugins/wpcasa/) and will NOT work without the core plugin.
+
+WPCasa is a WordPress solution that provides an intuitive way to manage property listings and create first-class real estate websites.
+
+* Website: [wpcasa.com](https://wpcasa.com)
+* Demo: [demo.wpcasa.com](http://demo.wpcasa.com)
+* Documentation: [docs.wpcasa.com](http://docs.wpcasa.com)
+
+== Installation ==
+
+= Automatic Installation =
+
+Automatic installation is the easiest way to install WPCasa All Import. Log into your WordPress admin and go to _WP-Admin > Plugins > Add New_.
+
+Then type "WPCasa All Import" in the search field and click _Install Now_ once you've found the plugin.
+
+= Manual Installation =
+
+If you prefer to install the plugin manually, you need to download it to your local computer and upload the unzipped plugin folder to the `/wp-content/plugins/` directory of your WordPress installation. Then activate the plugin on _WP-Admin > Plugins_.
+
+== Frequently Asked Questions ==
+
+= Will this plugin work without WPCasa or WP All Import? =
+
+No, this is an add-on plugin for the WPCasa real estate framework in combination with the WP All Import XML/CSV importer and will not work without the corresponding core plugins.
+
+== Screenshots ==
+
+1. WP All Import import template
+2. WP All Import run import
+3. WP All Import import log
+
+== Changelog ==
+
+= 1.0.0 =
+* Initial release
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+* Initial release
