@@ -12,7 +12,7 @@ Add-on for the WP All Import plugin to import any XML or CSV File to WPCasa
 
 == Description ==
 
-Use the WPCasa All Import add-on in combination with WPCasa and WP All Import to bulk import property information from anx XML or CSV file. The WPCasa All Import makes sure that the WP All Import plugin displays all the WPCasa custom fields in plain English and imports image galleries in the correct format.
+Use the WPCasa All Import add-on in combination with WPCasa and WP All Import to bulk import property information from anx XML or CSV file. The WPCasa All Import makes sure that the [WP All Import](https://wordpress.org/plugins/wp-all-import/) plugin displays all the WPCasa custom fields in plain English and imports image galleries in the correct format.
 
 > Please notice that this plugin is an add-on for [WPCasa](https://wordpress.org/plugins/wpcasa/) and will NOT work without the core plugin.
 
