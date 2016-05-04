@@ -338,29 +338,14 @@ foreach( $wpsight_options as $key => $option ) {
 	
 }
 
-// Add labels field when labels exist in options
-if( ! empty( $wpsight_labels ) ) {
-	
-	// Add none option to array
-	$wpsight_labels = array_merge( array( '' => 'None' ), $wpsight_labels );
-	
-	// Create labels field
-	$all_import_labels = $all_import->add_field(
-		'_listing_label', 'Label', 'radio', $wpsight_labels,
-		sprintf( 'Only available when %s add-on is activated.', 'WPCasa Listing Labels' )
-	);
-
-}
-
-// Create listing attributes section
-$all_import->add_options( null, 'Listing Attributes', array(
+$listing_attributes = array(
 
 	$all_import->add_field( '_listing_not_available', 'Availability', 'radio', array(
 		''		=> 'Item available',
 		'on'	=> 'Item not available'
 	), 'An item is not available when it has been sold or rented but should still be displayed on the website.' ),
 	
-	$all_import_labels,
+	// $all_import_labels,
 	
 	$all_import->add_field( '_listing_sticky', 'Sticky', 'radio', array(
 		''		=> 'No',
@@ -372,7 +357,24 @@ $all_import->add_options( null, 'Listing Attributes', array(
 		'on'	=> 'Yes',
 	), sprintf( 'Only available when %s add-on is activated.', 'WPCasa Featured Listings' ) ),
 
-) );
+);
+
+// Add labels field when labels exist in options
+if( ! empty( $wpsight_labels ) ) {
+	
+	// Add none option to array
+	$wpsight_labels = array_merge( array( '' => 'None' ), $wpsight_labels );
+	
+	// Create labels field
+	$listing_attributes[] = $all_import->add_field(
+		'_listing_label', 'Label', 'radio', $wpsight_labels,
+		sprintf( 'Only available when %s add-on is activated.', 'WPCasa Listing Labels' )
+	);
+
+}
+
+// Create listing attributes section
+$all_import->add_options( null, 'Listing Attributes', $listing_attributes );
 
 ######################################################################
 
