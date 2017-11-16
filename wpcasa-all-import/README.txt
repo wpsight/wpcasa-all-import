@@ -1,10 +1,10 @@
 === WPCasa All Import ===
-Contributors: wpsight, simonrimkus
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZRR56U2VTPZAQ
+Contributors: wpsight, joehana, simonrimkus
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7EVKNVA7QFXZ8
 Tags: real estate, realestate, import, wp all import, wpallimport, xml, csv, listing, property, wpcasa
 Requires at least: 4.0
-Tested up to: 4.6
-Stable tag: 1.0.0
+Tested up to: 4.9
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,9 @@ No, this is an add-on plugin for the WPCasa real estate framework in combination
 3. WP All Import import log
 
 == Changelog ==
+
+= 1.1.0 =
+* Update rapid-addon.php
 
 = 1.0.0 =
 * Initial release
