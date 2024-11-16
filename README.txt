@@ -1,10 +1,10 @@
 === WPCasa All Import ===
-Contributors: wpsight, joehana, simonrimkus
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7EVKNVA7QFXZ8
+Contributors: wpsight, kybernetikservices, mrinal013, joehana
+Donate link: https://www.paypal.com/donate/?hosted_button_id=SYJNVSP2BKTQ4
 Tags: real estate, realestate, import, wp all import, wpallimport, xml, csv, listing, property, wpcasa
-Requires at least: 4.0
-Tested up to: 4.9
-Stable tag: 1.1.0
+Requires at least: 6.2
+Tested up to: 6.7
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,15 @@ WPCasa is a WordPress solution that provides an intuitive way to manage property
 * Website: [wpcasa.com](https://wpcasa.com)
 * Demo: [demo.wpcasa.com](http://demo.wpcasa.com)
 * Documentation: [docs.wpcasa.com](http://docs.wpcasa.com)
+
+== Contributors ==
+This is a list of contributors to WPCasa All Import. 
+Many thanks to all of them for contributing and making WPCasa All Import even better. 
+
+[Mrinal Haque](https://profiles.wordpress.org/mrinal013/)
+[Kybernetik Services](https://www.kybernetik-services.com/?utm_source=wordpress_org&utm_medium=plugin&utm_campaign=wpcasa&utm_content=readme)
+[Joe Hana](https://wordpress.org/support/users/joehana/)
+[codestylist](https://wordpress.org/support/users/codestylist/)
 
 == Installation ==
 
@@ -40,6 +49,10 @@ If you prefer to install the plugin manually, you need to download it to your lo
 
 No, this is an add-on plugin for the WPCasa real estate framework in combination with the WP All Import XML/CSV importer and will not work without the corresponding core plugins.
 
+= Why do you call a Google maps URL during import? =
+
+To import addresses with the correct geographic coordinates we to call _maps.googleapis.com/maps/api/geocode/_ to request the coordinates based on the address. This works only if you enter a valid Google maps API key.
+
 == Screenshots ==
 
 1. WP All Import import template
@@ -47,9 +60,12 @@ No, this is an add-on plugin for the WPCasa real estate framework in combination
 3. WP All Import import log
 
 == Changelog ==
+= 1.1.1 =
+* Fixed guideline violation
+* Updated rapid-addon.php 1.1.4 and fixed code violation
 
 = 1.1.0 =
-* Update rapid-addon.php
+* Updated rapid-addon.php 1.1.0
 
 = 1.0.0 =
 * Initial release

@@ -1,20 +1,26 @@
 <?php
-/*
-Plugin Name: WPCasa All Import
-Plugin URI: https://wpcasa.com/downloads/wpcasa-all-import
-Description: Add-on for the WP All Import plugin to import any XML or CSV File to WPCasa
-Version: 1.1.0
-Author: WPSight
-Author URI: http://wpsight.com
-Requires at least: 4.0
-Tested up to: 4.9
-Text Domain: wpcasa-all-import
-Domain Path: /languages
-
-	Copyright: 2015 Simon Rimkus
-	License: GNU General Public License v2.0 or later
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/**
+ * WPCasa All Import
+ *
+ * @package           WPCasaAllImport
+ * @author            WPSight
+ * @copyright         2024 Kybernetik Services GmbH
+ * @license           GPL-2.0-or-later
+ *
+ * @wordpress-plugin
+ * Plugin Name:       WPCasa All Import
+ * Plugin URI:        https://wpcasa.com/downloads/wpcasa-all-import
+ * Description:       Add-on for the WP All Import plugin to import any XML or CSV File to WPCasa
+ * Version:           1.1.1
+ * Requires at least: 4.0
+ * Requires PHP:      5.6
+ * Requires Plugins:  wpcasa
+ * Author:            WPSight
+ * Author URI:        https://wpcasa.com
+ * Text Domain:       wpcasa-all-import
+ * License:           GPL v2 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) )
@@ -26,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) )
 include( 'rapid-addon.php' );
 
 // Create and name new add-on
-$all_import = new RapidAddon( 'WPCasa All Import', 'wpcasa_all_import' );
+$all_import = new WPSight_RapidAddon( 'WPCasa All Import', 'wpcasa_all_import' );
 
 // Set up central import fields array
 $import_fields = array();
@@ -93,10 +99,10 @@ $all_import->add_options(
 	
 		// Add price field
         $all_import->add_field( '_price', 'Price', 'text', null, 'In currency defined in WPCasa settings' ),
-        'Price Settings', 
+        'Price Settings',
         array(
 	        	// Add price offer (sale, rent etc.)
-	        	$all_import->add_field( '_price_offer', 'Offer', 'radio', 
+	        	$all_import->add_field( '_price_offer', 'Offer', 'radio',
 					array(
 						''		=> 'None',
 						'sale'	=> 'Sale',
@@ -581,38 +587,30 @@ function wpsight_all_import_function( $post_id, $data, $import_options ) {
 	    // Build $request_url for API call
 	    $request_url = 'https://maps.googleapis.com/maps/api/geocode/json?' . $search . $api_key;
 
-	    $curl = curl_init();
-	    
-	    curl_setopt( $curl, CURLOPT_URL, $request_url );
-	    curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
-	
-	    $all_import->log( '- Getting location data from Geocoding API: ' . $request_url );
-	
-	    $json = curl_exec( $curl );
-	    curl_close( $curl );
-	    
+		$response = wp_remote_get( $request_url );
+
 	    // Parse API response
-	    if ( ! empty( $json ) ) {
-	
-	        $details = json_decode( $json, true );
+	    if ( ! empty( $response ) ) {
+			
+			$details = json_decode( wp_remote_retrieve_body( $response ), true );
 	
 	        $address_data = array();
 	
-			foreach( $details[results][0][address_components] as $type ) {
+			foreach( $details['results'][0]['address_components'] as $type ) {
 	
 				// Parse Google Maps output into an array we can use
-				$address_data[ $type[types][0] ] = $type[long_name];
+				$address_data[ $type['types'][0] ] = $type['long_name'];
 	
 			}
 	
-			$lat		= $details[results][0][geometry][location][lat];		
-			$long		= $details[results][0][geometry][location][lng];		
-			$address	= $address_data[street_number] . ' ' . $address_data[route];		
-			$city		= $address_data[locality];
-			$country	= $address_data[country];
-			$zip		= $address_data[postal_code];		
-			$state		= $address_data[administrative_area_level_1];
-			$county		= $address_data[administrative_area_level_2];
+			$lat		= $details['results'][0]['geometry']['location']['lat'];		
+			$long		= $details['results'][0]['geometry']['location']['lng'];		
+			$address	= $address_data['street_number'] . ' ' . $address_data['route'];		
+			$city		= $address_data['locality'];
+			$country	= $address_data['country'];
+			$zip		= $address_data['postal_code'];		
+			$state		= $address_data['administrative_area_level_1'];
+			$county		= $address_data['administrative_area_level_2'];
 			
 			// Log some warnings if elements are empty
 			
@@ -628,11 +626,11 @@ function wpsight_all_import_function( $post_id, $data, $import_options ) {
 			    $all_import->log( '<b>WARNING:</b> Google Maps has not returned a City for this listing location.' );
 			}
 			
-			if ( empty( $address_data[street_number] ) ) {
+			if ( empty( $address_data['street_number'] ) ) {
 			    $all_import->log( '<b>WARNING:</b> Google Maps has not returned a Street Number for this listing location.' );
 			}
 			
-			if ( empty( $address_data[route] ) ) {
+			if ( empty( $address_data['route'] ) ) {
 			    $all_import->log( '<b>WARNING:</b> Google Maps has not returned a Street Name for this listing location.' );
 			}
 	
