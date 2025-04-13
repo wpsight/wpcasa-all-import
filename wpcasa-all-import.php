@@ -11,7 +11,7 @@
  * Plugin Name:       WPCasa All Import
  * Plugin URI:        https://wpcasa.com/downloads/wpcasa-all-import
  * Description:       Add-on for the WP All Import plugin to import any XML or CSV File to WPCasa
- * Version:           1.1.1
+ * Version:           1.1.2
  * Requires at least: 4.0
  * Requires PHP:      5.6
  * Requires Plugins:  wpcasa

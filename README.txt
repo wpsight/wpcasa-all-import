@@ -1,12 +1,12 @@
 === WPCasa All Import ===
 Contributors: wpsight, kybernetikservices, mrinal013, joehana
 Donate link: https://www.paypal.com/donate/?hosted_button_id=SYJNVSP2BKTQ4
-Tags: real estate, realestate, import, wp all import, wpallimport, xml, csv, listing, property, wpcasa
+Tags: import, wp all import, wpallimport, property, wpcasa
 Requires at least: 6.2
-Tested up to: 6.7
-Stable tag: 1.1.1
+Tested up to: 6.8
+Stable tag: 1.1.2
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Add-on for the WP All Import plugin to import any XML or CSV File to WPCasa
 
@@ -19,12 +19,12 @@ Use the WPCasa All Import add-on in combination with WPCasa and WP All Import to
 WPCasa is a WordPress solution that provides an intuitive way to manage property listings and create first-class real estate websites.
 
 * Website: [wpcasa.com](https://wpcasa.com)
-* Demo: [demo.wpcasa.com](http://demo.wpcasa.com)
-* Documentation: [docs.wpcasa.com](http://docs.wpcasa.com)
+* Demo: [demo.wpcasa.com](https://demo.wpcasa.com)
+* Documentation: [docs.wpcasa.com](https://docs.wpcasa.com)
 
 == Contributors ==
-This is a list of contributors to WPCasa All Import. 
-Many thanks to all of them for contributing and making WPCasa All Import even better. 
+This is a list of contributors to WPCasa All Import.
+Many thanks to all of them for contributing and making WPCasa All Import even better.
 
 [Mrinal Haque](https://profiles.wordpress.org/mrinal013/)
 [Kybernetik Services](https://www.kybernetik-services.com/?utm_source=wordpress_org&utm_medium=plugin&utm_campaign=wpcasa&utm_content=readme)
@@ -49,9 +49,9 @@ If you prefer to install the plugin manually, you need to download it to your lo
 
 No, this is an add-on plugin for the WPCasa real estate framework in combination with the WP All Import XML/CSV importer and will not work without the corresponding core plugins.
 
-= Why do you call a Google maps URL during import? =
+= Why do you call a Google Maps URL during import? =
 
-To import addresses with the correct geographic coordinates we to call _maps.googleapis.com/maps/api/geocode/_ to request the coordinates based on the address. This works only if you enter a valid Google maps API key.
+To import addresses with the correct geographical coordinates, we call _maps.googleapis.com/maps/api/geocode/_ to request the coordinates based on the address. This works only if you enter a valid Google Maps API key.
 
 == Screenshots ==
 
@@ -60,6 +60,9 @@ To import addresses with the correct geographic coordinates we to call _maps.goo
 3. WP All Import import log
 
 == Changelog ==
+= 1.1.1 =
+* Updated wpcasa.csv sample file
+
 = 1.1.1 =
 * Fixed guideline violation
 * Updated rapid-addon.php 1.1.4 and fixed code violation
