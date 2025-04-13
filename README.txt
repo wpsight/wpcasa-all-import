@@ -60,7 +60,7 @@ To import addresses with the correct geographical coordinates, we call _maps.goo
 3. WP All Import import log
 
 == Changelog ==
-= 1.1.1 =
+= 1.1.2 =
 * Updated wpcasa.csv sample file
 
 = 1.1.1 =
